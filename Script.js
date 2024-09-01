@@ -13,16 +13,28 @@ console.log(arr[0]);
 
 
 
-const arr2=[1,2,2,3,3,3,4,4,4,4,5,5];
- console.log(mostfrequent(arr2));
- function mostfrequent(arr2){
-  const frequency={};
- for (const item of arr2){
-      frequency[item]=(frequency[item]||0)+1;
-  }
-   const maxfrequency= Math.max(...Object.values(frequency));
- return Object.keys(frequency).find(key=>frequency[key]===maxfrequency);
+
+
+ const arr2 = [1, 1, 3, 5, 7, 6, 8, 5, 6, 4,];
+obj = {};
+let el,
+  max = 0;
+for (let i = 0; i < arr.length; i++) {
+  if (!obj[arr2[i]]) obj[arr2[i]] = 1;
+  else obj[arr2[i]]++;
 }
+
+for (const i in obj) {
+  if (max < obj[i]) {
+      max = obj[i];
+      el = i;
+  }
+}
+
+console.log("The most frequent element is: "  + el);
+
+
+
 
 
 
@@ -37,6 +49,9 @@ else{
  }
 
 }
+
+
+
 
 
 
